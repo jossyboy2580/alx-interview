@@ -3,6 +3,7 @@
 A Lockboxes puzzle solver using a greedy algorithm
 """
 
+
 def openbox(box, key, opened):
     """ open a box"""
     if key in opened:
@@ -11,6 +12,7 @@ def openbox(box, key, opened):
     for n_key in box[key]:
         openbox(box, n_key, opened)
     return
+
 
 def canUnlockAll(boxes):
     """
