@@ -6,7 +6,7 @@ A Lockboxes puzzle solver using a greedy algorithm
 
 def openbox(box, key, opened):
     """ open a box"""
-    if key in opened:
+    if key in opened or key >= len(box):
         return
     opened.add(key)
     for n_key in box[key]:
