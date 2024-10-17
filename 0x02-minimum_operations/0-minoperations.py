@@ -3,7 +3,6 @@
 This module contains functions that calculate the minimum
 number of operations needed to get n number of 'H'
 """
-import math
 
 
 def isPrime(n):
@@ -22,7 +21,7 @@ def allPrimeCandidates(n):
     """
     prime_candidates = list()
 
-    for i in range(2, n):
+    for i in range(2, n + 1):
         if isPrime(i):
             prime_candidates.append(i)
     return prime_candidates
@@ -59,3 +58,4 @@ def minOperations(n):
     prime_factors = getPrimeFactorsOf(n)
     if prime_factors:
         return sum(prime_factors)
+    return 0
