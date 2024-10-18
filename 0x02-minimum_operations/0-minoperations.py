@@ -3,6 +3,7 @@
 This module contains functions that calculate the minimum
 number of operations needed to get n number of 'H'
 """
+import math
 
 
 def isPrime(n):
@@ -20,8 +21,11 @@ def allPrimeCandidates(n):
     get all the prime numbers between 2 and sqrt(n)
     """
     prime_candidates = list()
+    limit = n + 1
+    if n > 1000:
+        limit = int(math.sqrt(n + 1))
 
-    for i in range(2, n + 1):
+    for i in range(2, limit):
         if isPrime(i):
             prime_candidates.append(i)
     return prime_candidates
