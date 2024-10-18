@@ -10,7 +10,7 @@ def isPrime(n):
     """
     return true if number is prime and false if not
     """
-    for i in range(2, n):
+    for i in range(2, int(math.sqrt(n))):
         if n % i == 0:
             return False
     return True
@@ -21,11 +21,8 @@ def allPrimeCandidates(n):
     get all the prime numbers between 2 and sqrt(n)
     """
     prime_candidates = list()
-    limit = n + 1
-    if n > 1000:
-        limit = int(math.sqrt(n + 1))
 
-    for i in range(2, limit):
+    for i in range(2, n + 1):
         if isPrime(i):
             prime_candidates.append(i)
     return prime_candidates
