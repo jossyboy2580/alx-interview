@@ -17,8 +17,6 @@ def isWinner(x, nums):
         return None
     if len(nums) > x:
         return None
-    if x == 0 or len(nums) == 0:
-        return 'Ben'
     for i in range(x):
         numbers = [num for num in range(2, nums[i] + 1, 1)]
         loop_count = 0
