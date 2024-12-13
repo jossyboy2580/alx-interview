@@ -13,16 +13,18 @@ def isWinner(x, nums):
 
     players_score = {'Ben': 0, 'Maria': 0}
 
-    if type(nums) != list:
+    if not isinstance(nums, list):
         return None
     if len(nums) > x:
         return None
+    if x == 0 or len(nums) == 0:
+        return 'Ben'
     for i in range(x):
-        range_of_numbers = [num for num in range(2, nums[i] + 1, 1)]
+        numbers = [num for num in range(2, nums[i] + 1, 1)]
         loop_count = 0
-        while(range_of_numbers):
-            present = range_of_numbers.pop(0)
-            range_of_numbers = [n for n in range_of_numbers if n % present != 0]
+        while (numbers):
+            present = numbers.pop(0)
+            range_of_numbers = [n for n in numbers if n % present != 0]
             loop_count += 1
         if loop_count % 2 == 0:
             players_score['Ben'] += 1
@@ -34,4 +36,3 @@ def isWinner(x, nums):
         return 'Maria'
     else:
         return None
-
