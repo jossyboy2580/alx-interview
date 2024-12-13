@@ -17,12 +17,14 @@ def isWinner(x, nums):
         return None
     if len(nums) > x:
         return None
+    if x == 0:
+        return 'Ben'
     for i in range(x):
         numbers = [num for num in range(2, nums[i] + 1, 1)]
         loop_count = 0
         while (numbers):
             present = numbers.pop(0)
-            range_of_numbers = [n for n in numbers if n % present != 0]
+            numbers = [n for n in numbers if n % present != 0]
             loop_count += 1
         if loop_count % 2 == 0:
             players_score['Ben'] += 1
