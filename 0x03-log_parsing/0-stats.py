@@ -26,7 +26,7 @@ def main(logs):
     total_size = 0
     for log in logs:
         match = re.match(regex, log)
-        if not match:
+        if match is None:
             continue
 
         code = match.groupdict()['code']
